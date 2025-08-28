@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Future Tech Ent Company</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Courier New', Courier, monospace;
+      background: #0d1117;
+      color: #c9d1d9;
+      line-height: 1.6;
+      background-image: url('https://www.transparenttextures.com/patterns/dark-denim-3.png');
+    }
+
+    a {
+      color: #58a6ff;
+      text-decoration: none;
+    }
+
+    header {
+      background: #161b22;
+      padding: 1em 2em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #30363d;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.5em;
+      color: #58a6ff;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2em;
+    }
+
+    nav a:hover {
+      color: #8b949e;
+    }
+
+    section {
+      padding: 4em 2em;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .hero {
+      text-align: center;
+      padding-top: 6em;
+      padding-bottom: 6em;
+      background: linear-gradient(to right, #0d1117, #161b22);
+    }
+
+    .hero h1 {
+      font-size: 3em;
+      margin-bottom: 0.5em;
+      color: #58a6ff;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      color: #8b949e;
+    }
+
+    .cta {
+      margin-top: 1em;
+      display: inline-block;
+      background: #58a6ff;
+      color: #0d1117;
+      padding: 0.8em 1.5em;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .cta:hover {
+      background: #1f6feb;
+      color: white;
+    }
+
+    h2 {
+      font-size: 2em;
+      margin-bottom: 1em;
+      color: #58a6ff;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2em;
+    }
+
+    .card {
+      background: #161b22;
+      padding: 1.5em;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(88, 166, 255, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 1em;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      max-width: 500px;
+      margin: auto;
+    }
+
+    input, textarea, button {
+      padding: 1em;
+      border: none;
+      border-radius: 5px;
+      font-family: inherit;
+      font-size: 1em;
+    }
+
+    input, textarea {
+      background: #0d1117;
+      color: #c9d1d9;
+      border: 1px solid #30363d;
+    }
+
+    button {
+      background: #58a6ff;
+      color: #0d1117;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #1f6feb;
+      color: white;
+    }
+
+    footer {
+      background: #161b22;
+      text-align: center;
+      padding: 2em;
+      color: #8b949e;
+      font-size: 0.9em;
+      border-top: 1px solid #30363d;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Future Tech Ent</div>
+    <nav>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>We Build the Future</h1>
+    <p>Web development. Design. Custom solutions for the next digital era.</p>
+    <a href="#contact" class="cta">Let’s Work Together</a>
+  </section>
+
+  <section id="services">
+    <h2>Services</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Custom Web Apps</h3>
+        <p>We build scalable, secure, and powerful web applications tailored to your business needs.</p>
+      </div>
+      <div class="card">
+        <h3>UI/UX Design</h3>
+        <p>Modern, user-friendly designs with a futuristic aesthetic and intuitive user flows.</p>
+      </div>
+      <div class="card">
+        <h3>Brand & Strategy</h3>
+        <p>We help tech companies define a strong digital identity and launch effectively online.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio">
+    <h2>Portfolio</h2>
+    <div class="grid" id="image-grid">
+      <!-- Images will be inserted by JavaScript -->
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p style="text-align:center; margin-bottom: 1em;">Have a project in mind? Let's talk.</p>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" required rows="5"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Future Tech Ent Company. Built with ❤️ and 010101.</p>
+  </footer>
+
+  <script>
+    // Load random images from Unsplash (public access via source.unsplash.com)
+    const imageGrid = document.getElementById('image-grid');
+
+    const keywords = ['technology', 'cyberpunk', 'web', 'abstract', 'future'];
+    const numberOfImages = 6;
+
+    for (let i = 0; i < numberOfImages; i++) {
+      const keyword = keywords[Math.floor(Math.random() * keywords.length)];
+      const img = document.createElement('img');
+      img.src = `https://source.unsplash.com/400x300/?${keyword}&sig=${i}`;
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.appendChild(img);
+      card.innerHTML += `<p style="margin-top:0.5em;">Project #${i + 1}</p>`;
+      imageGrid.appendChild(card);
+    }
+  </script>
+
+</body>
+</html>
+

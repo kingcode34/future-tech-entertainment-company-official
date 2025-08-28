@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Falling Words - Welcome to Future Tech</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background-color: #000;
+      color: #0f0;
+      font-family: 'Courier New', Courier, monospace;
+      height: 100vh;
+    }
+
+    .word {
+      position: absolute;
+      font-size: 2rem;
+      animation: fall linear;
+      white-space: nowrap;
+    }
+
+    @keyframes fall {
+      0% {
+        top: -50px;
+        opacity: 1;
+      }
+      100% {
+        top: 100vh;
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<script>
+  const words = ["Welcome", "to", "Future", "Tech"];
+  const colors = ["#0f0", "#0ff", "#f0f", "#ff0"];
+  
+  function createWord() {
+    const word = document.createElement('div');
+    word.className = 'word';
+    word.innerText = words[Math.floor(Math.random() * words.length)];
+    word.style.left = Math.random() * window.innerWidth + 'px';
+    word.style.animationDuration = (2 + Math.random() * 3) + 's';
+    word.style.color = colors[Math.floor(Math.random() * colors.length)];
+    document.body.appendChild(word);
+    
+    setTimeout(() => {
+      word.remove();
+    }, 5000);
+  }
+
+  // Generate falling words every 200ms
+  const interval = setInterval(createWord, 200);
+
+  // Redirect after 5 seconds
+  setTimeout(() => {
+    clearInterval(interval); // Stop generating more words
+    window.location.href = "home.html"; // Change to your target URL or file
+  }, 5000); // 5000 ms = 5 seconds
+</script>
+
+</body>
+</html>
